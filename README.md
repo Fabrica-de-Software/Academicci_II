@@ -41,8 +41,11 @@ Sistema em desenvolvimento como produto da disciplina de **Prática em Fábrica 
 **Orientador:** CARDOSO, Marcelo de Castro  
 **Instituição:** Centro Universitário de Anápolis - UniEvangélica  
 **Acadêmicos:**
-* PEREIRA, Claudio [@claudiopsfilho](https://github.com/claudiopsfilho);
 * GUEDES, Raphael [@rsguedes](https://github.com/rsguedes);
+* INACIO, Wanderson [@wandersonnc] (https://github.com/wandersonnc);
+* PEREIRA, Claudio [@claudiopsfilho](https://github.com/claudiopsfilho);
+* RANGEL, Alexandre [@allerpr] (https://github.com/allerpr);
+* TAVARES, Thaís [@ttavares18] (https://github.com/ttavares18);
 
 ## Licenças 
 Especificar
