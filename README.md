@@ -1,36 +1,18 @@
-# Leia-me: Projeto <Nome do Projeto>
+# Leia-me: Projeto Academicci
 ## Objetivo
-Texto de Parágrafo
+Descrição resumida do sistema
 
 ## Estrutura do Diretório 
-|Caminho| Arquivo|Identificador|
-|-|-|-|
+|Caminho| Conteúdo
+|-|-|
 |.|README|
-|.documentacao/arquitetura|Plano de Gerência de Configuração|
-|.documentacao/arquitetura|Documento de Arquitetura|
-|.documentacao/arquitetura|Diagrama de Classes|
-|.documentacao/arquitetura|Diagrama Entidade-Relacionamento|
-|.documentacao/arquitetura|Modelo Entidade-Relacionamento|
-|.documentacao/arquitetura|Modelo MVC|
-|.documentacao/processo|Modelo de Processo|
-|.documentacao/processo|Plano de Projeto|
-|.documentacao/processo|Gráfico Burndown|
-|.documentacao/processo|Checklist Scrum|
-|.documentacao/processo|Documento de Lições Aprendidas|
-|.documentacao/requisitos|Elevator Statement|
-|.documentacao/requisitos|Vision Box|
-|.documentacao/requisitos|Fluxo de Processo BPMN|
-|.documentacao/requisitos|Lista de Riscos|
-|.documentacao/requisitos|Documento de Histórias de Usuário|
-|.documentacao/requisitos|Documento de Regras de Negócio|
-|.documentacao/requisitos|Documento de Especificação de Mensagens|
-|.documentacao/requisitos|Diagrama de Casos de Uso|
-|.documentacao/requisitos|Diagrama de Sequência|
-|.documentacao/requisitos|Documento de Especificação de Interfaces|
-|.documentacao/templates|`Templates da Documentação Usada no Projeto`|
-|.documentacao/testes|Documento de Plano de Testes|
-|.documentacao/testes|Documento de Especificação de Casos de Teste|
-|.source_code||
+|.academicci_documentacao/arquitetura|Documentação Referente à Arquitetura do Projeto|
+|.academicci_documentacao/gerencia_config|Documentação Referente à Gerência de Configuração do Projeto|
+|.academicci_documentacao/gerencia_projeto|Documentação Referente à Gerência do Projeto|
+|.academicci_documentacao/requisitos|Documentação Referente aos Requisitos do Projeto|
+|.academicci_documentacao/templates|Templates da Documentação Usados no Projeto|
+|.academicci_documentacao/testes|Documentação Referente aos Testes|
+|.academicci_source||
 **OBS.:** Inserir diretório de código.
 
 ## Informações Adicionais 
@@ -42,10 +24,10 @@ Sistema em desenvolvimento como produto da disciplina de **Prática em Fábrica 
 **Instituição:** Centro Universitário de Anápolis - UniEvangélica  
 **Acadêmicos:**
 * GUEDES, Raphael [@rsguedes](https://github.com/rsguedes);
-* INACIO, Wanderson [@wandersonnc] (https://github.com/wandersonnc);
+* INACIO, Wanderson [@wandersonnc](https://github.com/wandersonnc);
 * PEREIRA, Claudio [@claudiopsfilho](https://github.com/claudiopsfilho);
-* RANGEL, Alexandre [@allerpr] (https://github.com/allerpr);
-* TAVARES, Thaís [@ttavares18] (https://github.com/ttavares18);
+* RANGEL, Alexandre [@allerpr](https://github.com/allerpr);
+* TAVARES, Thaís [@ttavares18](https://github.com/ttavares18);
 
 ## Licenças 
 Especificar
