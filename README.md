@@ -12,7 +12,8 @@ Descrição resumida do sistema
 |.academicci_documentacao/requisitos|Documentação Referente aos Requisitos do Projeto|
 |.academicci_documentacao/templates|Templates da Documentação Usados no Projeto|
 |.academicci_documentacao/testes|Documentação Referente aos Testes|
-|.academicci_source||
+|.academicci_relatorios/|Relatórios de Final de Sprint|
+|.academicci_source/|Código-fonte do sistema|
 **OBS.:** Inserir diretório de código.
 
 ## Informações Adicionais 
