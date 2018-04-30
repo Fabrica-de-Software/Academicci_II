@@ -13,20 +13,21 @@
     <h:body>
         <!--<p:dialog visible="true" width="350" height="150" header="Acessar o Sistema" showHeader="false" modal="true" resizable="false">--> 
 
-            <div class="container">
-                <h:form id="formLogin">
-                    <h1>Login</h1>
-                    <h:panelGrid>
-                        <p:messages id="menssagesLogin"/>
+        <div class="container">
+            <h:form id="formLogin" class="center1">
+                <h1>Login</h1>
+                <h:panelGrid>
+                    <p:messages id="menssagesLogin"/>
 
-                        <p:inputText id="usuario" placeholder="Usuário" size="30" value="" required="true" requiredMessage="Campo Usuário é obrigatório"/>
-                        <p:password id="senha" placeholder="Senha" size="30" value="" required="true" requiredMessage="Campo Senha é obrigatório"/>  
+                    E-mail:<p:inputText id="usuario" placeholder="Usuário" size="30" value="" required="true" requiredMessage="Campo Usuário é obrigatório"/>
+                    Senha:<p:password id="senha" placeholder="Senha" size="30" value="" required="true" requiredMessage="Campo Senha é obrigatório"/>  
+                    <a href="#" class="ls-login-forgot">Esqueci minha senha</a>
 
-                        <p:commandButton type="" value="Entrar" class="btn" />
-                        <p:commandButton type="" value="Cadastrar" class="btn" />
+                    <p:commandButton type="" value="Entrar" class="btn" />
+                    <p:commandButton type="" value="Cadastrar" class="btn1"/>
 
-                    </h:panelGrid>
-                </h:form>
-            </div>
+                </h:panelGrid>
+            </h:form>
+        </div>
     </h:body>
 </html>
