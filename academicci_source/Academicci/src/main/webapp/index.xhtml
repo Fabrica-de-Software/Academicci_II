@@ -17,7 +17,9 @@
                 <h:outputLabel value="Telefone:" for="telefone" />
                 <h:inputText value="#{cadastroMB.cadastro.telefone}" maxlength="10" id="telefone"
                              required="true" requiredMessage="Campo TELEFONE é obrigatório!" />
-                                
+                
+             
+                
                 <h:commandButton action="#{cadastroMB.salvar()}" value="Salvar" />
                 
             </h:panelGrid>
@@ -39,6 +41,7 @@
                     #{item.telefone}
                 </h:column>
                 
+               
                 
             </h:dataTable>
         </h:form>
