@@ -11,7 +11,6 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring.security.version>3.1.2.RELEASE</spring.security.version>
     </properties>
     
     <!--Repositorio Primefaces-->
@@ -28,12 +27,6 @@
     
     <!--Dependencias do Projeto-->
     <dependencies>
-        <!--PostgreSQL Antiga-->
-        <!--       <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <version>9.4.1209</version>
-        </dependency>-->
         
         <!--JSF 2.2 -->
         <dependency>
@@ -61,26 +54,22 @@
             <version>9.4.1212</version>
         </dependency>
         
+        
+        
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>4.3.1.Final</version>
+        </dependency>
+        
+       
+        
         <!--Java EE 7.0-->
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
             <version>7.0</version>
             <scope>provided</scope>
-        </dependency>
-        
-        <!--SPRING SECURITY WEB -->
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-web</artifactId>
-            <version>${spring.security.version}</version>
-        </dependency>
-        
-        <!--SPRING SECURITY -->
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-config</artifactId>
-            <version>${spring.security.version}</version>
         </dependency>
         
         <!--Primefaces-->
@@ -113,9 +102,7 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
-                    <compilerArguments>
-                        <endorseddirs>${endorsed.dir}</endorseddirs>
-                    </compilerArguments>
+                   
                 </configuration>
             </plugin>
         </plugins>
