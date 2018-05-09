@@ -15,11 +15,25 @@
                 <h:inputText value="#{cadastroMB.cadastro.nome}" maxlength="100" id="nome"
                              required="true" requiredMessage="Campo NOME é obrigatório!" />
                 
+                <h:outputLabel value="Matricula:" for="matricula" />
+                <h:inputText value="#{cadastroMB.cadastro.matricula}" maxlength="10" id="matricula"
+                             required="true" requiredMessage="Campo MATRICULA é obrigatório!" />
+                
+                <h:outputLabel value="E-mail:" for="email" />
+                <h:inputText value="#{cadastroMB.cadastro.email}" maxlength="10" id="email"
+                             required="true" requiredMessage="Campo E-MAIL é obrigatório!" />
+                
                 <h:outputLabel value="Telefone:" for="telefone" />
                 <h:inputText value="#{cadastroMB.cadastro.telefone}" maxlength="10" id="telefone"
                              required="true" requiredMessage="Campo TELEFONE é obrigatório!" />
                 
-             
+                <h:outputLabel value="CPF:" for="cpf" />
+                <h:inputText value="#{cadastroMB.cadastro.cpf}" maxlength="10" id="cpf"
+                             required="true" requiredMessage="Campo CPF é obrigatório!" />
+                
+                <h:outputLabel value="Senha:" for="senha" />
+                <h:inputText value="#{cadastroMB.cadastro.senha}" maxlength="10" id="senha"
+                             required="true" requiredMessage="Campo SENHA é obrigatório!" />
                 
                 <h:commandButton action="#{cadastroMB.salvar()}" value="Salvar" />
                 
@@ -41,8 +55,6 @@
                     <f:facet name="header">Telefone</f:facet>
                     #{item.telefone}
                 </h:column>
-                
-               
                 
             </h:dataTable>
         </h:form>

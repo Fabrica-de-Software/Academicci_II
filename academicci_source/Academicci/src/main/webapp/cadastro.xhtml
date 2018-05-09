@@ -2,57 +2,62 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-
-    <meta http-equiv="Content-Type" content="text/xhtml; charset=utf-8" />
-
-    <h:head>       
-        <title>Tela de Cadastro</title>
-        <h:outputStylesheet library="css" name="estilo.css" />
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Cadastro de Alunos</title>
     </h:head>
-
     <h:body>
-        <!--<p:dialog visible="true" width="350" height="150" header="Acessar o Sistema" showHeader="false" modal="true" resizable="false">--> 
-
-        <div class="container">
-            <h:form id="formCadastro" class="center">
-                <h1>Cadastro de Usuário</h1>
-                <h:panelGrid>
-                    <p:messages id="menssagesCadastro"/>
-
-                    Nome:<p:inputText id="nome" placeholder="Nome Completo" size="50" value="" required="true" requiredMessage="Campo Nome é obrigatório"/>
-                    E-mail:<p:inputText id="email" placeholder="E-mail" size="50" value="" required="true" requiredMessage="Campo E-mail é obrigatório"/>
-                    Matrícula:<p:inputText id="matricula" placeholder="Matrícula" size="30" value="" required="true" requiredMessage="Campo Matrícula é obrigatório"/>
-                    Senha:<p:password id="senha" placeholder="Senha" size="30" value="" required="true" requiredMessage="Campo Senha é obrigatório"/>  
-                    Confirmar Senha<p:password id="Confsenha" placeholder="Confirme a Senha" size="30" value="" required="true" requiredMessage="Campo Confirme a Senha é obrigatório"/> 
-                    CPF:<p:inputText id="cpf" placeholder="CPF" size="30" value="" required="true" requiredMessage="Campo CPF é obrigatório"/>
-                    RG:<p:inputText id="rg" placeholder="RG" size="30" value="" required="true" requiredMessage="Campo RG é obrigatório"/>
-
-                    <div class="campo">
-                        <label for="sexo">Sexo:</label><br>
-                            <select name="sexo" id="sexo">
-                                <option value="feminino">Feminino</option>
-                                <option value="masculino">Masculino</option>
-                                <option value="outros">Outros</option>
-                            </select></br>
-                    </div>
-                    <br></br>
-
-                    <div class="campo">
-                        <label for="nacesso">Nível de Acesso:</label><br>
-                            <select name="nacesso" id="NivelAcesso">
-                                <option value="administrador">Administrador</option>
-                                <option value="professor">Professor</option>
-                                <option value="monitor">Monitor</option>
-                                <option value="aluno">Aluno</option>
-                            </select></br>
-                    </div>
-                    <br></br>
-                    <p:commandButton type="button" value="Salvar" class="btn" />
-
-                </h:panelGrid>
-            </h:form>
-        </div>
+        <h:form>
+            <p:panelGrid columns="2">
+                
+                <h:outputLabel value="Nome:" for="nome" />
+                <h:inputText value="#{cadastroMB.cadastro.nome}" maxlength="100" id="nome"
+                             required="true" requiredMessage="Campo NOME é obrigatório!" />
+                
+                <h:outputLabel value="Matricula:" for="matricula" />
+                <h:inputText value="#{cadastroMB.cadastro.matricula}" maxlength="10" id="matricula"
+                             required="true" requiredMessage="Campo MATRICULA é obrigatório!" />
+                
+                <h:outputLabel value="E-mail:" for="email" />
+                <h:inputText value="#{cadastroMB.cadastro.email}" maxlength="10" id="email"
+                             required="true" requiredMessage="Campo E-MAIL é obrigatório!" />
+                
+                <h:outputLabel value="Telefone:" for="telefone" />
+                <h:inputText value="#{cadastroMB.cadastro.telefone}" maxlength="10" id="telefone"
+                             required="true" requiredMessage="Campo TELEFONE é obrigatório!" />
+                
+                <h:outputLabel value="CPF:" for="cpf" />
+                <h:inputText value="#{cadastroMB.cadastro.cpf}" maxlength="10" id="cpf"
+                             required="true" requiredMessage="Campo CPF é obrigatório!" />
+                
+                <h:outputLabel value="Senha:" for="senha" />
+                <h:inputText value="#{cadastroMB.cadastro.senha}" maxlength="10" id="senha"
+                             required="true" requiredMessage="Campo SENHA é obrigatório!" />
+                
+                <h:commandButton action="#{cadastroMB.salvar()}" value="Salvar" />
+                
+            </p:panelGrid>
+            
+            <h:messages/>
+            
+        </h:form>
+        
+        <h:form>
+            <h:dataTable var="item" value="#{cadastroMB.lista}">
+                
+                <h:column>
+                    <f:facet name="header">Nome</f:facet>
+                    #{item.nome}
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">Telefone</f:facet>
+                    #{item.telefone}
+                </h:column>
+                
+            </h:dataTable>
+        </h:form>
     </h:body>
 </html>
+
