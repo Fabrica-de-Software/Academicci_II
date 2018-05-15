@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet library="css" name="default.css"/>
+        <h:outputStylesheet library="css" name="cssLayout.css"/>
+        <h:outputStylesheet library="css" name="bootstrap.css" />
+        <h:outputStylesheet library="css" name="style.css" />
+        <h:outputStylesheet library="css" name="mdb.css" />        
+        <title>Facelets Template</title>
+    </h:head>
+
+    <h:body>
+
+        <div id="top">
+            <ui:insert name="top">
+                <h1 align="center" style="color:white; padding-right: 400px;font-size:50px">Academici</h1>
+                <h2 align="center" style="color:white; padding-right: 400px; padding-bottom:5px; font-size:20px">Nivelamento Acadêmico</h2>                
+            </ui:insert>
+        </div>
+        <div align="center"> 
+            <div id="content" class="col-md-5" align="left" >
+                <ui:insert name="center-content">
+                      <section class="form-gradient">
+
+                                <!--Form with header-->
+                                <div class="card">
+
+                                    <!--Header-->
+                                    <div style="border-top-color:blue; border-top:aqua solid 32px" class="header pt-4 peach-gradient">
+
+                                        <div class="row d-flex justify-content-left mx-4 pt-1">
+                                            <h3 class="blue-text mb-3 pt-3 font-weight-bold">Cadastro</h3>
+                                        </div>
+
+                                    </div>
+                                    <!--Header-->
+
+                                    <div class="card-body pt-0 mx-4">
+
+                                        <!--Body-->
+                                        <div class="sm-form pb-2">
+                                            <label for="Form-email3">Nome Completo</label>
+                                            <input type="text" id="Form-email3" class="form-control"/>
+
+                                        </div>
+
+                                        <!--Body-->
+                                        <div class="sm-form pb-1">
+                                            <label for="Form-email3">Matrícula</label>
+                                            <input type="text" id="Form-email3" class="form-control"/>
+
+                                        </div>
+
+                                        <div class="form-group pb-1 ">
+                                                <label for="sel1">Sexo:</label>
+                                                <select class="form-control" id="sel1">
+                                                  <option>Selecione</option>  
+                                                  <option>Feminino</option>
+                                                  <option>Masculino</option>
+                                                  <option>Outro</option>
+                                                </select>
+                                              </div>
+                                        <!--Body-->
+                                        <div class="sm-form pb-2">
+                                            <label for="Form-email3">CPF</label>                        
+                                            <input type="text" id="Form-email3" class="form-control"/>
+
+                                        </div>   
+                                        <!--Body-->
+                                        <div class="sm-form pb-2">
+                                            <label for="Form-email3">RG</label>                        
+                                            <input type="text" id="Form-email3" class="form-control"/>
+
+                                        </div>                                                               
+                                        <!--Body-->
+                                        <div class="sm-form pb-2">
+                                            <label for="Form-email3">E-mail</label>                        
+                                            <input type="text" id="Form-email3" class="form-control"/>
+
+                                        </div>           
+                                        <div class="sm-form pb-1 pb-md-3">
+                                            <label for="Form-pass3">Senha</label>                        
+                                            <input type="password" id="Form-pass3" class="form-control"/>
+                                        </div>
+                                        <div class="form-group pb-1 ">
+                                                <label for="sel1">Nível de Acesso</label>
+                                                <select class="form-control" id="sel1">
+                                                  <option>Selecione</option>  
+                                                  <option>Professor</option>
+                                                  <option>Monitor</option>
+                                                  <option>Aluno</option>                              
+                                                </select>
+                                              </div>
+
+                                        <!--Grid row-->
+                                        <div class="row d-flex align-items-center mb-4">
+
+                                            <!--Grid column-->
+                                            <div class="col-md-1 col-md-5 d-flex align-items-start">
+                                                <div class="text-center">
+                                                    <button type="button" class="btn btn-blue btn-rounded z-depth-1a">Salvar</button>
+                                                </div>
+                                            </div>
+                                            <!--Grid column-->
+
+                                            <!--Grid column-->
+                                            <div class="col-md-7">
+                                                <p class="font-small grey-text d-flex justify-content-end mt-3">Possui Conta ? <a href="login.html" class="dark-grey-text ml-1 font-weight-bold"> Sign up</a></p>
+                                            </div>
+                                            <!--Grid column-->
+
+                                        </div>
+                                        <!--Grid row-->
+                                    </div>
+
+                                </div>
+                                <!--/Form with header-->
+
+                            </section>   
+                
+                </ui:insert>
+            </div>
+        </div>    
+        <div id="bottom">
+            <ui:insert name="bottom">
+                                            <div class="col-md-7">
+                            <p class="font-small grey-text d-flex justify-content-end mt-3">Engenharia de Computação<a href="login.html" class="blue-grey-text ml-1 font-weight-bold"> UniEvangélica</a></p>
+                        </div>
+            </ui:insert>
+        </div>
+
+    </h:body>
+
+</html>

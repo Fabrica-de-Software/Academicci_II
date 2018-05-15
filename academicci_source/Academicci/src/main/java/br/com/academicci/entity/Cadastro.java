@@ -30,7 +30,11 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Cadastro.findAll", query = "SELECT c FROM Cadastro c")
     , @NamedQuery(name = "Cadastro.findById", query = "SELECT c FROM Cadastro c WHERE c.id = :id")
     , @NamedQuery(name = "Cadastro.findByNome", query = "SELECT c FROM Cadastro c WHERE c.nome = :nome")
-    , @NamedQuery(name = "Cadastro.findByTelefone", query = "SELECT c FROM Cadastro c WHERE c.telefone = :telefone")})
+    , @NamedQuery(name = "Cadastro.findByMatricula", query = "SELECT c FROM Cadastro c WHERE c.matricula = :matricula")
+    , @NamedQuery(name = "Cadastro.findByEmail", query = "SELECT c FROM Cadastro c WHERE c.email = :email")
+    , @NamedQuery(name = "Cadastro.findByTelefone", query = "SELECT c FROM Cadastro c WHERE c.telefone = :telefone")
+    , @NamedQuery(name = "Cadastro.findByCpf", query = "SELECT c FROM Cadastro c WHERE c.cpf = :cpf")
+    , @NamedQuery(name = "Cadastro.findBySenha", query = "SELECT c FROM Cadastro c WHERE c.senha = :senha")})
 public class Cadastro implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -47,8 +51,28 @@ public class Cadastro implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 100)
+    @Column(name = "matricula")
+    private Integer matricula;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 100)
+    @Column(name = "email")
+    private String email;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 100)
     @Column(name = "telefone")
     private String telefone;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 100)
+    @Column(name = "cpf")
+    private String cpf;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 100)
+    @Column(name = "senha")
+    private String senha;
 
     public Cadastro() {
     }
@@ -57,10 +81,14 @@ public class Cadastro implements Serializable {
         this.id = id;
     }
 
-    public Cadastro(Integer id, String nome, String telefone) {
+    public Cadastro(Integer id, String nome, Integer matricula, String email, String telefone, String cpf, String senha) {
         this.id = id;
         this.nome = nome;
+        this.matricula = matricula;
+        this.email = email;
         this.telefone = telefone;
+        this.cpf = cpf;
+        this.senha = senha;
     }
 
     public Integer getId() {
@@ -85,6 +113,38 @@ public class Cadastro implements Serializable {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+    
+    public Integer getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(Integer matricula) {
+        this.matricula = matricula;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 
     @Override
@@ -111,5 +171,7 @@ public class Cadastro implements Serializable {
     public String toString() {
         return "br.com.academicci.entity.Cadastro[ id=" + id + " ]";
     }
+
     
+
 }
