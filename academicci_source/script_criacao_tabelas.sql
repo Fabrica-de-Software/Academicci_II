@@ -35,7 +35,7 @@ CREATE TABLE contato (
 -- Tabela 'pessoa'
 -- -----------------------------------------------------
 CREATE TABLE pessoa (
-	mat_pessoa 		SERIAL 			NOT NULL PRIMARY KEY,
+	mat_pessoa 		INT 			NOT NULL PRIMARY KEY,
 	nome 			VARCHAR(100)	NOT NULL,
 	sexo			CHAR(1) 		NOT NULL,
 	dtNasc			DATE 			NOT NULL,
@@ -118,23 +118,23 @@ CREATE TABLE topico (
 );
 
 -- -----------------------------------------------------
--- Tabela periodo
+-- Tabela periodo_letivo
 -- -----------------------------------------------------
-CREATE TABLE periodo (
-	id_periodo			SERIAL 			NOT NULL PRIMARY KEY,
+CREATE TABLE periodo_letivo (
+	id_periodolet		SERIAL 			NOT NULL PRIMARY KEY,
 	semestre			SMALLINT	 	NOT NULL,
 	ano					SMALLINT	 	NOT NULL
 );
 
 -- -----------------------------------------------------
--- Tabela disciplina_periodo
+-- Tabela disciplina_periodolet
 -- -----------------------------------------------------
-CREATE TABLE disciplina_periodo (
+CREATE TABLE disciplina_periodolet (
 	id_disciplina_FK 	INT 			NOT NULL,
-	id_periodo_FK 		INT 			NOT NULL,
-    PRIMARY KEY (id_disciplina_FK, id_periodo_FK),
+	id_periodolet_FK 	INT 			NOT NULL,
+    PRIMARY KEY (id_disciplina_FK, id_periodolet_FK),
 	FOREIGN KEY (id_disciplina_FK)		REFERENCES disciplina (id_disciplina),
-    FOREIGN KEY (id_periodo_FK)		    REFERENCES periodo (id_periodo)
+    FOREIGN KEY (id_periodolet_FK)	    REFERENCES periodo_letivo (id_periodolet)
 );
 
 -- -----------------------------------------------------
@@ -162,18 +162,12 @@ CREATE TABLE anexo (
 );
 
 -- -----------------------------------------------------
--- Tabela pessoa_periodo
+-- Tabela pessoa_periodolet
 -- -----------------------------------------------------
-CREATE TABLE pessoa_periodo (
-	id_periodo_FK		INT 		NOT NULL,
+CREATE TABLE pessoa_periodolet (
+	id_periodolet_FK	INT 		NOT NULL,
 	mat_pessoa_FK		INT 		NOT NULL,
-    PRIMARY KEY (id_periodo_FK, mat_pessoa_FK),
-	FOREIGN KEY (id_periodo_FK)	    REFERENCES periodo (id_periodo),
+    PRIMARY KEY (id_periodolet_FK, mat_pessoa_FK),
+	FOREIGN KEY (id_periodolet_FK)	REFERENCES periodo_letivo (id_periodolet),
     FOREIGN KEY (mat_pessoa_FK)	    REFERENCES pessoa (mat_pessoa)
 );
-
--- -----------------------------------------------------
--- -----------------------------------------------------
--- Insercao no Banco
--- -----------------------------------------------------
--- -----------------------------------------------------
