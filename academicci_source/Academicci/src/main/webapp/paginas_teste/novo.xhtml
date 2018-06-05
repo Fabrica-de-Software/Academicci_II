@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<ui:composition template="/template/layout.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="corpo">
+        <h:form>
+            <p:panelGrid columns="2">
+
+                <h:outputLabel value="Nome:" for="nome" />
+                <h:inputText value="" maxlength="100" id="nome"
+                             required="true" requiredMessage="Campo NOME é obrigatório!" />
+
+                <h:outputLabel value="Matricula:" for="matricula" />
+                <h:inputText value="" maxlength="10" id="matricula"
+                             required="true" requiredMessage="Campo MATRICULA é obrigatório!" />
+
+                <h:outputLabel value="E-mail:" for="email" />
+                <h:inputText value="" maxlength="10" id="email"
+                             required="true" requiredMessage="Campo E-MAIL é obrigatório!" />
+
+                <h:outputLabel value="Telefone:" for="telefone" />
+                <h:inputText value="" maxlength="10" id="telefone"
+                             required="true" requiredMessage="Campo TELEFONE é obrigatório!" />
+
+                <h:outputLabel value="CPF:" for="cpf" />
+                <h:inputText value="" maxlength="10" id="cpf"
+                             required="true" requiredMessage="Campo CPF é obrigatório!" />
+
+                <h:outputLabel value="Senha:" for="senha" />
+                <h:inputText value="" maxlength="10" id="senha"
+                             required="true" requiredMessage="Campo SENHA é obrigatório!" />
+
+                <h:commandButton value="Salvar" />
+
+            </p:panelGrid>
+
+            <h:messages/>
+
+        </h:form>
+    </ui:define>
+
+</ui:composition>

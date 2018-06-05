@@ -50,5 +50,6 @@ Contributor(s):
         <property name="hibernate.hbm2ddl.auto">update</property>
         
         <mapping class="br.com.academicci.entity.Cadastro" />
+        <mapping class="br.com.academicci.entity.Disciplina" />
     </session-factory>
 </hibernate-configuration>

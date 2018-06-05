@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>
+            <ui:insert name="titulo">Academicci</ui:insert>
+        </title>
+        <h:outputStylesheet library="css" name="estilo.css" />
+    </h:head>
+
+    <h:body>
+        <div class="topo">
+            <ui:insert name="topo">
+                Topo
+            </ui:insert>
+        </div>
+
+        <div class="menu"> 
+            <ui:insert name="menu">
+                <ui:include src="menu_page.xhtml" />
+            </ui:insert>
+        </div>
+
+        <div class="corpo">
+            <ui:insert name="corpo">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris cursus condimentum accumsan. Pellentesque vel ultricies lectus, eu pulvinar nulla. Vestibulum neque erat, egestas eu quam sed, condimentum euismod lacus. Nullam nibh diam, ornare at vehicula nec, eleifend quis nulla. Phasellus eget velit faucibus, lacinia massa ut, dapibus mi. Aenean rutrum et mauris euismod molestie. Fusce feugiat bibendum nunc, at dictum lectus tincidunt ac. Etiam nibh diam, porttitor vel turpis quis, placerat vestibulum ipsum. Donec nec dignissim ligula.
+
+                Integer quis libero ligula. Morbi vulputate ipsum in suscipit venenatis. Proin nulla purus, egestas id posuere eget, faucibus nec sem. In eget rutrum turpis. Mauris iaculis pretium ipsum id commodo. Ut imperdiet leo lorem. Integer porta mattis arcu ac mollis. Nulla sit amet nisi et justo cursus efficitur. Maecenas in tortor ante.
+
+                Donec venenatis leo ac justo faucibus, et condimentum ante vestibulum. Duis non laoreet odio, a condimentum ligula. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ex nibh, accumsan id lobortis ut, iaculis ut dolor. Pellentesque a aliquet nisl. Aenean id magna sed erat congue vehicula. Donec vehicula diam sit amet turpis placerat lacinia. Cras ornare, ante ut euismod auctor, tellus enim pulvinar dui, id pellentesque erat mauris quis ex. Donec ultricies elit in mi tempus molestie. Sed tempor nunc sem, ullamcorper viverra ipsum ultrices ut. Morbi eget turpis efficitur, varius lacus ut, laoreet lectus. Curabitur lacinia sit amet augue at ultrices.
+
+                Morbi facilisis ut augue sagittis gravida. Ut quis rutrum dui. Maecenas lorem felis, ultrices venenatis accumsan vitae, pulvinar a erat. Morbi finibus augue eu lectus ornare rhoncus. Proin sit amet nibh nec justo dapibus cursus eget eu felis. Mauris faucibus, orci pulvinar maximus posuere, lorem tellus tristique lorem, a ornare odio felis nec velit. Phasellus et facilisis sem. Curabitur et mauris tincidunt, finibus justo ut, cursus nisl. Ut id ipsum lorem. Fusce quis lectus neque. Cras sagittis posuere lacus. Phasellus faucibus tellus eu sodales varius.
+
+                Mauris mattis volutpat tincidunt. Nulla pharetra velit metus, ac ultricies ex gravida et. Pellentesque tristique urna eros. Cras luctus placerat finibus. Suspendisse dapibus vestibulum sem ullamcorper vestibulum. Vivamus at massa odio. Cras convallis et mauris in vulputate. Quisque ac interdum elit. Etiam eget nisl tempus, congue sapien sit amet, vehicula ligula. Aenean accumsan dolor eget bibendum suscipit. Maecenas efficitur tellus id leo porta, quis porta nibh posuere. Suspendisse eu condimentum justo. Maecenas sodales mattis tempor. Curabitur lobortis tempor tellus sit amet porta. Nunc feugiat finibus quam vitae dignissim.
+
+                Suspendisse pellentesque porta velit, lacinia consectetur arcu consectetur non. Nullam consectetur ornare urna quis lacinia. Integer pharetra velit at pharetra dictum. Nullam laoreet augue sollicitudin, egestas massa quis, suscipit velit. Nulla tincidunt nec arcu sed elementum. Sed feugiat iaculis nunc, sed facilisis mauris dictum id. Nullam et tristique nisl, et consequat nisl. Mauris rutrum euismod lacus, gravida euismod felis congue ac. Donec ullamcorper purus cursus bibendum blandit.             
+            </ui:insert>
+        </div>
+
+        <div class="rodape"> 
+            <ui:insert name="rodape">
+                Desenvolvido na Disciplina de Prática em Fábrica de Software II
+            </ui:insert>
+        </div>
+
+    </h:body>
+</html>
