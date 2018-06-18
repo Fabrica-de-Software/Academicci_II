@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<ui:composition template="/template/layout.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="corpo">
+
+        <h:form>
+            <p:panelGrid columns="2">
+
+                <p:outputLabel value="Disciplina:" for="disciplina" />
+                <p:inputText value="" maxlength="100" id="disciplina"
+                             required="true" requiredMessage="Campo DISCIPLINA é obrigatório!" />
+
+                <p:outputLabel value="Semestre:" for="matricula" />
+                <p:inputText value="" maxlength="10" id="matricula"
+                             required="true" requiredMessage="Campo MATRICULA é obrigatório!" />
+
+                <p:outputLabel value="Ano:" for="email" />
+                <p:inputText value="" maxlength="10" id="email"
+                             required="true" requiredMessage="Campo E-MAIL é obrigatório!" />
+
+                <p:outputLabel value="Fórum:" for="telefone" />
+                <p:inputText value="" maxlength="10" id="telefone"
+                             required="true" requiredMessage="Campo TELEFONE é obrigatório!" />
+
+                <div class="cancel_save">
+                    <p:commandButton value="Cancelar" type="reset"/>
+                    <p:commandButton value="Salvar" type="submit"/>
+                </div>
+
+            </p:panelGrid>
+
+            <!--<h:messages/>-->
+
+        </h:form>
+    </ui:define>
+
+</ui:composition>
