@@ -10,7 +10,7 @@ WHERE schemaname != 'pg_catalog' AND schemaname != 'information_schema';
 -- -----------------------------------------------------
 -- -----------------------------------------------------
 
--- OLD
+-- OLD NAO CRIAR ESTA TABELA, ELA NAO FUNCIONA!
 CREATE TABLE cadastro
 (
     id Primary Key NOT NULL serial,
@@ -44,6 +44,7 @@ CREATE TABLE pessoa (
 	rg				VARCHAR(25) 	NOT NULL,
 	senha			VARCHAR(50) 		NULL,
 	sal				VARCHAR(100) 		NULL,
+	status			CHAR(1)				NULL,
 	id_contato_FK 	INT 			NOT NULL,
     FOREIGN KEY (id_contato_FK) 	REFERENCES  contato (id_contato)
 );
@@ -62,7 +63,7 @@ CREATE TABLE perfil (
 CREATE TABLE disciplina (
 	id_disciplina	SERIAL 			NOT NULL PRIMARY KEY,
 	nome			VARCHAR(100) 	NOT NULL,
-	grade_curric	VARCHAR(20) 	NOT NULL,
+	status			CHAR(1)		 	NOT NULL,
 	forum			VARCHAR(100) 	NULL
 );
 
@@ -110,6 +111,7 @@ CREATE TABLE perfil_pessoa (
 -- -----------------------------------------------------
 CREATE TABLE topico (
 	id_topico			SERIAL 			NOT NULL PRIMARY KEY,
+	titulo				VARCHAR(150)	NOT NULL,
 	descricao			VARCHAR(300)	NOT NULL,
 	mat_pessoa_FK 		INT 			NOT NULL,
 	id_disciplina_FK 	INT 			NOT NULL,
@@ -155,8 +157,8 @@ CREATE TABLE anexo (
 	nome				VARCHAR(50) 	NOT NULL,
 	tamanho				VARCHAR(30) 		NULL,
 	file_path			VARCHAR(500) 		NULL,
-	id_topico_FK		INT 			NOT NULL,
-	id_resposta_FK		INT 			NOT NULL,
+	id_topico_FK		INT 				NULL,
+	id_resposta_FK		INT 				NULL,
     FOREIGN KEY (id_topico_FK)		    REFERENCES topico (id_topico),
     FOREIGN KEY (id_resposta_FK)	    REFERENCES resposta (id_resposta)
 );
