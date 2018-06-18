@@ -20,44 +20,29 @@
             <p:growl id="messages"/>
 
             <p:menubar>
+                <p:menuitem value="Início" url="https://google.com.br"/>
+                
+                <p:submenu label="Usuário">
+                    <p:menuitem value="Novo Usuário"/>
+                    <p:menuitem value="Editar"/>
+                </p:submenu>
+                
+                <p:submenu label="Disciplinas">
+                    <p:menuitem value="Nova Disciplina" url="#"/>
+                    <p:menuitem value="Editar"/>
+                    <p:menuitem value="Publicações" url="#"/>
+                </p:submenu>
+                
                 <p:submenu label="Fórum">
-                    <p:submenu label="Submenu">
-                        <p:menuitem value="Item de Menu" url="#" />
-                    </p:submenu>
-                    <p:menuitem value="Item de Menu" url="#" />
+                    <p:menuitem value="Novo Fórum" url="#" />
+                    <p:menuitem value="Avisos" url="#" />
                 </p:submenu>
 
-                <p:submenu label="Edit" icon="ui-icon-pencil">
-                    <p:menuitem value="Undo" url="#" icon="ui-icon-arrowreturnthick-1-w" />
-                    <p:menuitem value="Redo" url="#" icon="ui-icon-arrowreturnthick-1-e" />
-                </p:submenu>
-
-                <p:submenu label="Help" icon="ui-icon-help">
-                    <p:menuitem value="Contents" url="#" />
-                    <p:submenu label="Search" icon="ui-icon-search">
-                        <p:submenu label="Text">
-                            <p:menuitem value="Workspace" url="#" />
-                        </p:submenu>
-                        <p:menuitem value="File" url="#" />
-                    </p:submenu>
-                </p:submenu>
-
-                <p:submenu label="Actions" icon="ui-icon-gear">
-                    <p:submenu label="Ajax" icon="ui-icon-refresh">
-                        <p:menuitem value="Save" actionListener="#{menuView.save}" icon="ui-icon-disk" update="messages"/>
-                        <p:menuitem value="Update" actionListener="#{menuView.update}" icon="ui-icon-arrowrefresh-1-w" update="messages"/>
-                    </p:submenu>
-                    <p:submenu label="Non-Ajax" icon="ui-icon-newwin">
-                        <p:menuitem value="Delete" actionListener="#{menuView.delete}" icon="ui-icon-close" update="messages" ajax="false"/>
-                    </p:submenu>
-                </p:submenu>
-
-                <p:menuitem value="Quit" url="http://www.primefaces.org" icon="ui-icon-close" />
-
+                <p:menuitem value="Ajuda" url="#" />
+                
                 <f:facet name="options">
-                    
-                        <p:commandButton type="button" value="Logout" icon="ui-icon-extlink" styleClass="btn_logout"/>
-                    
+                    <p:outputLabel value="Bem-Vindo(a), " />
+                    <p:commandButton type="button" value="Sair" styleClass="btn_logout"/>
                 </f:facet>
             </p:menubar>
         </h:form>        
