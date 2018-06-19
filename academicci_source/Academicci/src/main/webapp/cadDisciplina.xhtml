@@ -9,35 +9,101 @@
 
     <ui:define name="corpo">
 
-        <h:form>
-            <p:panelGrid columns="2">
+        <!--        <h:form>
+                    <p:panelGrid columns="2">
+        
+                        <p:outputLabel value="Disciplina:" for="disciplina" />
+                        <p:inputText value="" maxlength="100" id="disciplina"
+                                     required="true" requiredMessage="Campo DISCIPLINA é obrigatório!" />
+        
+                        <p:outputLabel value="Semestre:" for="matricula" />
+                        <p:inputText value="" maxlength="10" id="matricula"
+                                     required="true" requiredMessage="Campo MATRICULA é obrigatório!" />
+        
+                        <p:outputLabel value="Ano:" for="email" />
+                        <p:inputText value="" maxlength="10" id="email"
+                                     required="true" requiredMessage="Campo E-MAIL é obrigatório!" />
+        
+                        <p:outputLabel value="Fórum:" for="telefone" />
+                        <p:inputText value="" maxlength="10" id="telefone"
+                                     required="true" requiredMessage="Campo TELEFONE é obrigatório!" />
+        
+                        <div class="cancel_save">
+                            <p:commandButton value="Cancelar" type="reset"/>
+                            <p:commandButton value="Salvar" type="submit"/>
+                        </div>
+        
+                    </p:panelGrid>
+        
+                    <h:messages/>
+        
+                </h:form>-->
 
-                <p:outputLabel value="Disciplina:" for="disciplina" />
-                <p:inputText value="" maxlength="100" id="disciplina"
-                             required="true" requiredMessage="Campo DISCIPLINA é obrigatório!" />
+        <p:tabView >
+            <p:tab title="Cadastro de Disciplina">
 
-                <p:outputLabel value="Semestre:" for="matricula" />
-                <p:inputText value="" maxlength="10" id="matricula"
-                             required="true" requiredMessage="Campo MATRICULA é obrigatório!" />
+                <h:form id="form-cadastro">	 	
 
-                <p:outputLabel value="Ano:" for="email" />
-                <p:inputText value="" maxlength="10" id="email"
-                             required="true" requiredMessage="Campo E-MAIL é obrigatório!" />
+                    <h:panelGrid id="panelGrid-campos-form" columns="2" cellpadding="10">
 
-                <p:outputLabel value="Fórum:" for="telefone" />
-                <p:inputText value="" maxlength="10" id="telefone"
-                             required="true" requiredMessage="Campo TELEFONE é obrigatório!" />
+                        <p:outputLabel value="Disciplina" for="inputText-nome"/>
+                        <p:inputText id="inputText-nome" 
+                                     style="width:300px" maxlength="70" 
+                                     value=""
+                                     required="true"
+                                     requiredMessage="A DISCIPLINA é de preenchimento obrigatório"/>
 
-                <div class="cancel_save">
-                    <p:commandButton value="Cancelar" type="reset"/>
-                    <p:commandButton value="Salvar" type="submit"/>
-                </div>
+                        <p:outputLabel for="selectOneRadio-sexo" value="Semestre:" />
+                        <p:selectOneRadio id="selectOneRadio-sexo" 
+                                          value=""
+                                          required="true"
+                                          requiredMessage="O SEMESTRE é de preenchimento obrigatório">
 
-            </p:panelGrid>
+                            <f:selectItem itemLabel="1" itemValue="1" />
+                            <f:selectItem itemLabel="2" itemValue="2" />            				
+                        </p:selectOneRadio>
 
-            <!--<h:messages/>-->
+                        <p:outputLabel value="Ano" for="inputText-email"/>
+                        <p:inputText id="inputText-email" 
+                                     style="width:300px" 
+                                     maxlength="4" 
+                                     value=""
+                                     required="true"
+                                     requiredMessage="O ANO é de preenchimento obrigatório"/>           		
 
-        </h:form>
+
+                        <p:outputLabel value="Fórum" for="inputText-endereco"/>
+                        <p:inputText id="inputText-endereco" 
+                                     style="width:300px" 
+                                     maxlength="100" 
+                                     value=""
+                                     required="true"
+                                     requiredMessage="O FÓRUM é de preenchimento obrigatório"/>
+
+                        <p:spacer/>
+                        <p:commandButton value="Salvar" 
+                                         id="commandButton-salvar"
+                                         icon=""
+                                         actionListener="#{cadastrarPessoaController.SalvarNovaPessoa}"
+                                         update="panelGrid-campos-form"/>
+                        
+                        <p:spacer/>
+                        <p:commandButton value="Cancelar" 
+                                         id="commandButton-cancelar"
+                                         icon=""
+                                         actionListener="#{cadastrarPessoaController.SalvarNovaPessoa}"
+                                         update="panelGrid-campos-form"/>
+                    </h:panelGrid>
+
+                    <p:messages showDetail="true" autoUpdate="true" closable="true" severity="warn"/>
+                    <p:messages autoUpdate="true" closable="true" severity="error"/>		
+                    <p:messages showDetail="true" autoUpdate="true" closable="true" severity="info"/>
+
+                </h:form>
+
+            </p:tab>		 		
+
+        </p:tabView>
     </ui:define>
 
 </ui:composition>
