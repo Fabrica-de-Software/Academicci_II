@@ -8,19 +8,28 @@
     <h:head>       
         <title>Tela de login</title>
         <h:outputStylesheet library="css" name="estilo.css" />
-   </h:head>
+    </h:head>
     <h:body>
-        <h:form>
-            <h:panelGrid columns="2"> 
-                <h:outputLabel value="Usuário:" />
-                <h:inputText value="#{LoginMB.login.login}" size="30"/>
-                
-                <h:outputLabel value="Senha" />
-                <h:inputText value="#{LoginMB.login.senha}" size="10"/>
-                
-                <h:commandButton value=" Logar no Sistema" action="#{LoginMB.LogarNoSistema()}"/>
-            </h:panelGrid>
-            
-        </h:form>
+        <div id="divCenter">
+            <h:form >
+                <h:panelGrid columns="2"> 
+                    <p:outputLabel value="Usuário:" />
+                    <p:inputText value="#{LoginMB.login.login}" size="30"/>
+
+                    <p:outputLabel value="Senha:" />
+                    <p:password id="nonFeedback" value="#{passwordView.senha}" />
+
+                    <p:growl id="growl" life="2000" />
+                    <p:commandLink id="nonAjax" actionListener="#{buttonView.buttonAction}" ajax="false">
+                        <p:outputLabel value="Esqueceu sua senha?" />
+                    </p:commandLink>
+
+                    <p:commandButton value=" Login" action="#{LoginMB.LogarNoSistema()}"/>
+                    <p:commandButton value=" Cadastrar" action="#{LoginMB.LogarNoSistema()}"/>
+
+                </h:panelGrid>
+
+            </h:form>
+        </div>
     </h:body>
 </html>
