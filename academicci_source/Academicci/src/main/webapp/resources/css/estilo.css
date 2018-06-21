@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 .btn{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
@@ -121,7 +123,6 @@
     position: absolute; 
     top: 50%; }
 
-
 .container {
     padding-right: 15px;
     padding-left: 15px;
@@ -150,11 +151,13 @@
     font-size: 18px; 
     color: #333333;
 }
+body {
+    font-size: 14px;
+}
 .rodape {
     text-align:center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
-    /*    background-color: #f0f0ff;*/
     border-top: 2px solid #ccc;
     padding: 20px 8px;
     margin: 20px auto 1px auto;
@@ -166,6 +169,27 @@
     background-color: red;
 }
 
-#form-cadastro {
-    font-family: cursive;
+#teste {
+    font-family: cursive; 
+    font-size: 10pt;
+    background-color: red;
+}
+
+.ui-button-text {
+    color: purple;
+    font-size: 16px;
+}
+
+.ui-button {
+    background: white !important;
+    border-style: none !important;
+    border-radius: 2px !important;
+}
+
+.btnteste{
+    position: fixed !important;
+    bottom: 100px !important; 
+    left: 0px !important;
+    background-color: red;
+    
 }

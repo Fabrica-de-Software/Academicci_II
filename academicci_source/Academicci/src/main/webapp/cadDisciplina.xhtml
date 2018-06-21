@@ -7,73 +7,70 @@
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:p="http://primefaces.org/ui">
 
+    <ui:define name="titulo">Disciplina</ui:define>
+
     <ui:define name="corpo">
-        
-        <p:tabView >
-            <p:tab title="Cadastro de Disciplina">
+        <h:form id="form-cadastro">	 	
+            <p:panel header="Cadastro de Disciplina">
+                <h:panelGrid id="panelGrid-campos-form" columns="2" border="0" cellspacing="5" cellpadding="5">
 
-                <h:form id="form-cadastro">	 	
+                    <p:outputLabel value="Disciplina" for="inputText-nome"/>
+                    <p:inputText id="inputText-nome" 
+                                 style="width:300px" maxlength="70" 
+                                 value=""
+                                 required="true"
+                                 requiredMessage="A DISCIPLINA é de preenchimento obrigatório"/>
 
-                    <h:panelGrid id="panelGrid-campos-form" columns="2" cellpadding="10">
+                    <p:outputLabel for="selectOneRadio-sexo" value="Semestre:" />
+                    <p:selectOneRadio id="selectOneRadio-sexo" 
+                                      value=""
+                                      required="true"
+                                      requiredMessage="O SEMESTRE é de preenchimento obrigatório">
 
-                        <p:outputLabel value="Disciplina" for="inputText-nome"/>
-                        <p:inputText id="inputText-nome" 
-                                     style="width:300px" maxlength="70" 
-                                     value=""
-                                     required="true"
-                                     requiredMessage="A DISCIPLINA é de preenchimento obrigatório"/>
+                        <f:selectItem itemLabel="1" itemValue="1" />
+                        <f:selectItem itemLabel="2" itemValue="2" />            				
+                    </p:selectOneRadio>
 
-                        <p:outputLabel for="selectOneRadio-sexo" value="Semestre:" />
-                        <p:selectOneRadio id="selectOneRadio-sexo" 
-                                          value=""
-                                          required="true"
-                                          requiredMessage="O SEMESTRE é de preenchimento obrigatório">
-
-                            <f:selectItem itemLabel="1" itemValue="1" />
-                            <f:selectItem itemLabel="2" itemValue="2" />            				
-                        </p:selectOneRadio>
-
-                        <p:outputLabel value="Ano" for="inputText-email"/>
-                        <p:inputText id="inputText-email" 
-                                     style="width:300px" 
-                                     maxlength="4" 
-                                     value=""
-                                     required="true"
-                                     requiredMessage="O ANO é de preenchimento obrigatório"/>           		
+                    <p:outputLabel value="Ano" for="inputText-email"/>
+                    <p:inputText id="inputText-email" 
+                                 style="width:300px" 
+                                 maxlength="4" 
+                                 value=""
+                                 required="true"
+                                 requiredMessage="O ANO é de preenchimento obrigatório"/>           		
 
 
-                        <p:outputLabel value="Fórum" for="inputText-endereco"/>
-                        <p:inputText id="inputText-endereco" 
-                                     style="width:300px" 
-                                     maxlength="100" 
-                                     value=""
-                                     required="true"
-                                     requiredMessage="O FÓRUM é de preenchimento obrigatório"/>
-
-                        <p:spacer/>
-                        <p:commandButton value="Alterar" 
-                                         id="commandButton-salvar"
-                                         icon=""
-                                         actionListener="#{cadastrarPessoaController.SalvarNovaPessoa}"
-                                         update="panelGrid-campos-form"/>
+                    <p:outputLabel value="Fórum" for="inputText-endereco"/>
+                    <p:inputText id="inputText-endereco" 
+                                 style="width:300px" 
+                                 maxlength="100" 
+                                 value=""
+                                 required="true"
+                                 requiredMessage="O FÓRUM é de preenchimento obrigatório"/>
+<div class="btnteste">
+<!--                    <f:facet name="footer" >-->
                         
-                        <p:spacer/>
-                        <p:commandButton value="Cancelar" 
-                                         id="commandButton-cancelar"
-                                         icon=""
-                                         actionListener="#{cadastrarPessoaController.SalvarNovaPessoa}"
-                                         update="panelGrid-campos-form"/>
-                    </h:panelGrid>
+                            <p:commandButton value="Alterar" 
+                                             id="commandButton-salvar"
+                                             icon=""
+                                             actionListener="#{cadastrarPessoaController.SalvarNovaPessoa}"
+                                             update="panelGrid-campos-form"/>
+                            <p:commandButton value="Cancelar"
+                                             type="reset"
+                                             id="commandButton-cancelar"
+                                             icon=""
+                                             actionListener="#{cadastrarPessoaController.SalvarNovaPessoa}"
+                                             update="panelGrid-campos-form"/>
+<!--                    </f:facet>                       -->
+                    </div>
 
-                    <p:messages showDetail="true" autoUpdate="true" closable="true" severity="warn"/>
-                    <p:messages autoUpdate="true" closable="true" severity="error"/>		
-                    <p:messages showDetail="true" autoUpdate="true" closable="true" severity="info"/>
+                </h:panelGrid>
+            </p:panel>
 
-                </h:form>
+            <p:messages showDetail="true" autoUpdate="true" closable="true" severity="warn"/>
+            <p:messages autoUpdate="true" closable="true" severity="error"/>		
+            <p:messages showDetail="true" autoUpdate="true" closable="true" severity="info"/>
 
-            </p:tab>		 		
-
-        </p:tabView>
+        </h:form>
     </ui:define>
-
 </ui:composition>
