@@ -47,22 +47,25 @@
                                  value=""
                                  required="true"
                                  requiredMessage="O FÓRUM é de preenchimento obrigatório"/>
-<div class="btnteste">
-<!--                    <f:facet name="footer" >-->
-                        
+
+                    <f:facet name="footer" >
+                        <div class="btnteste">
                             <p:commandButton value="Alterar" 
+                                             type="button"
                                              id="commandButton-salvar"
                                              icon=""
                                              actionListener="#{cadastrarPessoaController.SalvarNovaPessoa}"
                                              update="panelGrid-campos-form"/>
+                            <p:outputLabel value=""/>
                             <p:commandButton value="Cancelar"
                                              type="reset"
                                              id="commandButton-cancelar"
                                              icon=""
                                              actionListener="#{cadastrarPessoaController.SalvarNovaPessoa}"
                                              update="panelGrid-campos-form"/>
-<!--                    </f:facet>                       -->
-                    </div>
+
+                        </div>
+                    </f:facet>                       
 
                 </h:panelGrid>
             </p:panel>

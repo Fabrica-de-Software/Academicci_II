@@ -160,7 +160,7 @@ body {
     font-size: 14px;
     border-top: 2px solid #ccc;
     padding: 20px 8px;
-    margin: 20px auto 1px auto;
+    margin: 230px auto 1px auto;
     position: relative; 
     bottom: 0;
     width: 99%;
@@ -187,9 +187,9 @@ body {
 }
 
 .btnteste{
-    position: fixed !important;
-    bottom: 100px !important; 
-    left: 0px !important;
-    background-color: red;
-    
+    position: relative !important;
+    bottom: 10px !important; 
+    left: 100px !important;
+    padding: 15px 0px;
+    margin-left: 140px;   
 }

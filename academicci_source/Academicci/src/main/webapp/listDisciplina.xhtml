@@ -11,14 +11,27 @@
         <h:form>
             <p:panelGrid columns="2">
 
-                <p:dataTable var="car" value="#{dtBasicView.cars}">
+                <p:dataTable id="tbl" var="car" value="#{dataExporterView.cars}"
+                             
+                             paginatorTemplate=" {FirstPageLink}  {PageLinks}  {LastPageLink} {Exporters}"
+                             paginator="true" rows="10" style="margin-bottom:10px;"
+                             paginatorPosition="bottom">
+
                     <p:column headerText="Disciplinas">
                         <h:outputText value="#{car.disciplinas}" />
                     </p:column>
 
                     <p:column headerText="Ações">
                         <h:outputText value="#{car.acao}" />
+                        <h1>oi</h1>
+                        <p:commandButton value="Alterar" 
+                                             id="commandButton-salvar"
+                                             icon=""
+                                             actionListener="#{cadastrarPessoaController.SalvarNovaPessoa}"
+                                             update="panelGrid-campos-form"/>
                     </p:column>
+
+
 
                 </p:dataTable>
 
