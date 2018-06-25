@@ -117,11 +117,12 @@
 #divCenter {  
     width: 400px; 
     height: 150px; 
-    left: 50%; 
-    margin: -130px 0 0 -210px; 
-    padding:10px;
-    position: absolute; 
-    top: 50%; }
+    position: relative;
+/*    position: absolute;*/
+    left: 40%;
+    right: 50%;
+    bottom: 50%;
+}
 
 .container {
     padding-right: 15px;
@@ -160,7 +161,7 @@ body {
     font-size: 14px;
     border-top: 2px solid #ccc;
     padding: 20px 8px;
-    margin: 230px auto 1px auto;
+    margin: auto;
     position: relative; 
     bottom: 0;
     width: 99%;
@@ -192,4 +193,22 @@ body {
     left: 100px !important;
     padding: 15px 0px;
     margin-left: 140px;   
+}
+
+.topo_page {
+/*    background-color: red;*/
+    padding-bottom: 10px;
+}
+#logo {
+   width: 200px;
+   float: left;
+}
+
+#texto_topo{
+    font-family: 'Roboto', sans-serif;
+    font-size: 16pt;
+    color: black;
+    text-align: right;
+    position: relative;
+    top: 15px;   
 }

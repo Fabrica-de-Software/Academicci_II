@@ -20,21 +20,19 @@
             <p:growl id="messages"/>
 
             <p:menubar>
-                <p:menuitem value="Início" url="https://google.com.br"/>
-                
+                <p:menuitem icon="oi" value="Início" url="https://google.com.br"/> 
+                                
                 <p:submenu label="Usuário">
-                    <p:menuitem value="Novo Usuário"/>
-                    <p:menuitem value="Editar"/>
+                    <p:menuitem value="Novo Usuário" url="/cadUsuario.xhtml"/>
+                    <p:menuitem value="Usuários" url="/listUsuario.xhtml"/>
                 </p:submenu>
                 
-                <p:submenu label="Disciplinas">
+                <p:submenu label="Disciplina">
                     <p:menuitem value="Nova Disciplina" url="/cadDisciplina.xhtml"/>
-                    <p:menuitem value="Editar"/>
-                    <p:menuitem value="Publicações" url="#"/>
+                    <p:menuitem value="Disciplinas" url="/listDisciplina.xhtml"/>
                 </p:submenu>
                 
                 <p:submenu label="Fórum">
-                    <p:menuitem value="Novo Fórum" url="#" />
                     <p:menuitem value="Avisos" url="#" />
                 </p:submenu>
 
@@ -42,11 +40,11 @@
                 
                 <f:facet name="options">
                     <p:outputLabel value="Bem-Vindo(a), " />
-                    <p:commandButton type="button" value="Sair" styleClass="btn_logout"/>
+                    <p:commandButton value="Sair" action="#{LoginMB.logout()}" styleClass="btn_logout"/>
+                    
                 </f:facet>
             </p:menubar>
         </h:form>        
     </h:body>
-
 </html>
 
