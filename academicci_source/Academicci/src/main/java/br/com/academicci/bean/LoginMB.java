@@ -29,6 +29,7 @@ public class LoginMB implements Serializable{
             return "/aplicacao/index?faces-redirect=true";
         }
         else{
+            //TODO Mostrar Mensagem de Usuário não autenticado
             return "/seguranca/login?faces-redirect=true";
          
                    
@@ -37,7 +38,7 @@ public class LoginMB implements Serializable{
     
     public String logout(){
        FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
-       return "/seguranca/login?faces-redirect=true";
+       return "/seguranca/login?faces-redirect=false";
     }
     
 
