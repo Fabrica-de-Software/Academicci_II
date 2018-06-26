@@ -16,7 +16,7 @@ import org.hibernate.Session;
  */
 public class DisciplinaDAO {
     
-    public void salvar(Disciplina disciplina){
+        public void salvar(Disciplina disciplina){
         Session sessao = HibernateUtil.getSessionFactory().openSession();
         sessao.beginTransaction();
         
@@ -28,9 +28,30 @@ public class DisciplinaDAO {
     
     public List<Disciplina> listar(){
         Session sessao = HibernateUtil.getSessionFactory().openSession();
-        List<Disciplina> lista = sessao.getNamedQuery("Disciplina.findAll").list();
-        sessao.close();
         
-        return lista;
+        List<Disciplina> disciplina = sessao.getNamedQuery("Disciplina.findAll").list();
+        sessao.close();
+        return disciplina;
     }
+    
+    public void alterar(Disciplina disciplina){
+        Session sessao = HibernateUtil.getSessionFactory().openSession();
+        sessao.beginTransaction();
+        
+        sessao.merge(disciplina);
+        
+        sessao.getTransaction().commit();
+        sessao.close();
+    }    
+    
+    public void deletar(Long id){
+        Session sessao = HibernateUtil.getSessionFactory().openSession();
+        sessao.beginTransaction();
+        
+        sessao.delete(sessao.get(Disciplina.class, id));
+        
+        sessao.getTransaction().commit();
+        sessao.close();
+    }
+    
 }

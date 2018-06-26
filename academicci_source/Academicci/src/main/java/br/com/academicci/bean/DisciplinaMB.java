@@ -10,59 +10,57 @@ import br.com.acdemicci.dao.DisciplinaDAO;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
+import javax.faces.view.ViewScoped;
 
 /**
  *
  * @author alexa
  */
-
 @ManagedBean
+@ViewScoped
 public class DisciplinaMB {
-    
+
     private Disciplina disciplina;
     private List<Disciplina> lista;
-
-    /**
-     * @return the disciplina
-     */
+    private DisciplinaDAO dao;
+    
+    
     public Disciplina getDisciplina() {
         return disciplina;
     }
 
-    /**
-     * @param disciplina the disciplina to set
-     */
+
     public void setDisciplina(Disciplina disciplina) {
         this.disciplina = disciplina;
     }
 
-    /**
-     * @return the lista
-     */
+
     public List<Disciplina> getLista() {
         return lista;
     }
 
-    /**
-     * @param lista the lista to set
-     */
+
     public void setLista(List<Disciplina> lista) {
         this.lista = lista;
     }
-    
-    public void salvar(){
-        DisciplinaDAO dao = new DisciplinaDAO();
-        dao.salvar(disciplina);
-        
-        inicializar();
-    }
-    
+
     @PostConstruct
-    public void inicializar(){
-        DisciplinaDAO dao = new DisciplinaDAO();
+    public void inicializarTela(){
+        dao = new DisciplinaDAO();
         lista = dao.listar();
         
+        limpar();
+    }
+    
+    public void limpar(){
         disciplina = new Disciplina();
+    }
+    
+    public void salvar(){
+        dao = new DisciplinaDAO();
+        dao.salvar(disciplina);
+        
+        inicializarTela();
     }
     
 }

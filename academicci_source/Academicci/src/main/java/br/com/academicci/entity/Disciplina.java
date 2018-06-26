@@ -15,7 +15,6 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.persistence.*;
 
 /**
  *
@@ -25,29 +24,41 @@ import javax.persistence.*;
 @Table(name = "disciplina")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Disciplina.findAll", query = "SELECT c FROM Disciplina c")
-    , @NamedQuery(name = "Disciplina.findById", query = "SELECT c FROM Disciplina c WHERE c.id = :id")
-    , @NamedQuery(name = "Disciplina.findByPeriodo", query = "SELECT c FROM Disciplina c WHERE c.periodo = :periodo")
-    , @NamedQuery(name = "Disciplina.findByNome", query = "SELECT c FROM Disciplina c WHERE c.nome = :nome")})
+    @NamedQuery(name = "Disciplina.findAll", query = "SELECT d FROM Disciplina d")
+    , @NamedQuery(name = "Disciplina.findById", query = "SELECT d FROM Disciplina d WHERE d.id = :id")
+    , @NamedQuery(name = "Disciplina.findByNome", query = "SELECT d FROM Disciplina d WHERE d.nome = :nome")
+    , @NamedQuery(name = "Disciplina.findByPeriodo", query = "SELECT d FROM Disciplina d WHERE d.periodo = :periodo")
+    , @NamedQuery(name = "Disciplina.findBySemestre", query = "SELECT d FROM Disciplina d WHERE d.semestre = :semestre")
+    , @NamedQuery(name = "Disciplina.findByAno", query = "SELECT d FROM Disciplina d WHERE d.ano = :ano")
+    , @NamedQuery(name = "Disciplina.findByStatus", query = "SELECT d FROM Disciplina d WHERE d.status = :status")})
 public class Disciplina implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Basic(optional = false)
     @NotNull
     @Column(name = "id")
     private Long id;
-
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "periodo")
-    private int periodo;
-    
     @Basic(optional = false)
     @NotNull
     @Column(name = "nome")
-    private String nome;
+    private Serializable nome;
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "periodo")
+    private Serializable periodo;
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "semestre")
+    private Serializable semestre;
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "ano")
+    private Serializable ano;
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "status")
+    private Serializable status;
 
     public Disciplina() {
     }
@@ -56,9 +67,13 @@ public class Disciplina implements Serializable {
         this.id = id;
     }
 
-    public Disciplina(Long id, String nome) {
+    public Disciplina(Long id, Serializable nome, Serializable periodo, Serializable semestre, Serializable ano, Serializable status) {
         this.id = id;
         this.nome = nome;
+        this.periodo = periodo;
+        this.semestre = semestre;
+        this.ano = ano;
+        this.status = status;
     }
 
     public Long getId() {
@@ -68,21 +83,45 @@ public class Disciplina implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
-    
-    public int getPeriodo() {
-        return periodo;
-    }
 
-    public void setPeriodo(int periodo) {
-        this.periodo = periodo;
-    }
-
-    public String getNome() {
+    public Serializable getNome() {
         return nome;
     }
 
-    public void setNome(String nome) {
+    public void setNome(Serializable nome) {
         this.nome = nome;
+    }
+
+    public Serializable getPeriodo() {
+        return periodo;
+    }
+
+    public void setPeriodo(Serializable periodo) {
+        this.periodo = periodo;
+    }
+
+    public Serializable getSemestre() {
+        return semestre;
+    }
+
+    public void setSemestre(Serializable semestre) {
+        this.semestre = semestre;
+    }
+
+    public Serializable getAno() {
+        return ano;
+    }
+
+    public void setAno(Serializable ano) {
+        this.ano = ano;
+    }
+
+    public Serializable getStatus() {
+        return status;
+    }
+
+    public void setStatus(Serializable status) {
+        this.status = status;
     }
 
     @Override
@@ -107,9 +146,7 @@ public class Disciplina implements Serializable {
 
     @Override
     public String toString() {
-        return "br.com.academicci.entidade.Disciplina[ id=" + id + " ]";
+        return "br.com.academicci.entity.Disciplina[ id=" + id + " ]";
     }
-
-
-
+    
 }

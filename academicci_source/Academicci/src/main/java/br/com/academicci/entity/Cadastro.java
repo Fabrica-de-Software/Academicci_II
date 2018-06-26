@@ -9,19 +9,16 @@ import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author Raphael
+ * @author alexa
  */
 @Entity
 @Table(name = "cadastro")
@@ -32,119 +29,141 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Cadastro.findByNome", query = "SELECT c FROM Cadastro c WHERE c.nome = :nome")
     , @NamedQuery(name = "Cadastro.findByMatricula", query = "SELECT c FROM Cadastro c WHERE c.matricula = :matricula")
     , @NamedQuery(name = "Cadastro.findByEmail", query = "SELECT c FROM Cadastro c WHERE c.email = :email")
-    , @NamedQuery(name = "Cadastro.findByTelefone", query = "SELECT c FROM Cadastro c WHERE c.telefone = :telefone")
     , @NamedQuery(name = "Cadastro.findByCpf", query = "SELECT c FROM Cadastro c WHERE c.cpf = :cpf")
-    , @NamedQuery(name = "Cadastro.findBySenha", query = "SELECT c FROM Cadastro c WHERE c.senha = :senha")})
+    , @NamedQuery(name = "Cadastro.findBySenha", query = "SELECT c FROM Cadastro c WHERE c.senha = :senha")
+    , @NamedQuery(name = "Cadastro.findByRg", query = "SELECT c FROM Cadastro c WHERE c.rg = :rg")
+    , @NamedQuery(name = "Cadastro.findBySexo", query = "SELECT c FROM Cadastro c WHERE c.sexo = :sexo")
+    , @NamedQuery(name = "Cadastro.findByNivelAcesso", query = "SELECT c FROM Cadastro c WHERE c.nivelAcesso = :nivelAcesso")})
 public class Cadastro implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
+    @NotNull
     @Column(name = "id")
-    private Integer id;
+    private Long id;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 100)
     @Column(name = "nome")
-    private String nome;
+    private Serializable nome;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 100)
     @Column(name = "matricula")
-    private Integer matricula;
+    private Serializable matricula;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 100)
     @Column(name = "email")
-    private String email;
+    private Serializable email;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 100)
-    @Column(name = "telefone")
-    private String telefone;
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 100)
     @Column(name = "cpf")
-    private String cpf;
+    private Serializable cpf;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 100)
     @Column(name = "senha")
-    private String senha;
+    private Serializable senha;
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "rg")
+    private Serializable rg;
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "sexo")
+    private Serializable sexo;
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "nivelAcesso")
+    private Serializable nivelAcesso;
 
     public Cadastro() {
     }
 
-    public Cadastro(Integer id) {
+    public Cadastro(Long id) {
         this.id = id;
     }
 
-    public Cadastro(Integer id, String nome, Integer matricula, String email, String telefone, String cpf, String senha) {
+    public Cadastro(Long id, Serializable nome, Serializable matricula, Serializable email, Serializable cpf, Serializable senha, Serializable rg, Serializable sexo, Serializable nivelAcesso) {
         this.id = id;
         this.nome = nome;
         this.matricula = matricula;
         this.email = email;
-        this.telefone = telefone;
         this.cpf = cpf;
         this.senha = senha;
+        this.rg = rg;
+        this.sexo = sexo;
+        this.nivelAcesso = nivelAcesso;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public String getNome() {
+    public Serializable getNome() {
         return nome;
     }
 
-    public void setNome(String nome) {
+    public void setNome(Serializable nome) {
         this.nome = nome;
     }
 
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
-    
-    public Integer getMatricula() {
+    public Serializable getMatricula() {
         return matricula;
     }
 
-    public void setMatricula(Integer matricula) {
+    public void setMatricula(Serializable matricula) {
         this.matricula = matricula;
     }
 
-    public String getEmail() {
+    public Serializable getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
+    public void setEmail(Serializable email) {
         this.email = email;
     }
 
-    public String getCpf() {
+    public Serializable getCpf() {
         return cpf;
     }
 
-    public void setCpf(String cpf) {
+    public void setCpf(Serializable cpf) {
         this.cpf = cpf;
     }
 
-    public String getSenha() {
+    public Serializable getSenha() {
         return senha;
     }
 
-    public void setSenha(String senha) {
+    public void setSenha(Serializable senha) {
         this.senha = senha;
+    }
+
+    public Serializable getRg() {
+        return rg;
+    }
+
+    public void setRg(Serializable rg) {
+        this.rg = rg;
+    }
+
+    public Serializable getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(Serializable sexo) {
+        this.sexo = sexo;
+    }
+
+    public Serializable getNivelAcesso() {
+        return nivelAcesso;
+    }
+
+    public void setNivelAcesso(Serializable nivelAcesso) {
+        this.nivelAcesso = nivelAcesso;
     }
 
     @Override
@@ -171,7 +190,5 @@ public class Cadastro implements Serializable {
     public String toString() {
         return "br.com.academicci.entity.Cadastro[ id=" + id + " ]";
     }
-
     
-
 }
