@@ -1,102 +1,185 @@
 @charset "utf-8";
 
-#divCenter {  
-    width: 100%; 
-    height: 500px;
-/*    background-color: pink;*/
+/*===== inicio ESTRUTURA PRINCIPAL =====*/
+html {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
 }
 
-.area_login {
-/*    background-color: green;*/
-    width: 450px;
+body {
+    background:url(../resources/images/bg.jpg) no-repeat center top #310b28;
+    background-size: 100%;
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    margin: 0px;
+}
+
+.topo_page {
+    background-color: #7D1064;
+    width: auto;
+    height: 70px;
+    padding-bottom: 10px;
     position: relative;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);    
+    margin-top: 0px;
 }
 
-
-.center{
-    position:absolute;
-    left:40%;
-    top:10%;
-    margin-left:-510px;
-    margin-top:-40px;
-}
-
-.center1{
-    position:absolute;
-    left:45%;
-    top:25%;
-    margin-left:-110px;
-    margin-top:-40px;
-}
 .corpo {
-    padding: 10px 20px;
+    /*    background-color: #76ff03;*/
+    padding-top: 10px;
+    height: 50%;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px; 
     color: #333333;
 }
-body {
-    font-size: 14px;
-}
+
 .rodape {
-    text-align:center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
+    /*    background-color: pink;*/
+    width: auto;
     border-top: 2px solid #ccc;
     padding: 20px 8px;
     margin: auto;
     position: relative; 
-    bottom: 0;
-    width: 99%;
+    bottom: -50%;
+    left: 0;
+    right: 0;
 }
-.btn_logout {
-    background-color: red;
+.rodape_login {
+    /*    background-color: pink;*/
+    width: auto;
+    border-top: 2px solid #9d3384;
+    padding: 20px 8px;
+    margin: auto;
+    position: absolute; 
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
-#teste {
-    font-family: cursive; 
-    font-size: 10pt;
-    background-color: red;
+#texto_rodape {
+    text-align:center;
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 14px;
+    color: white;
+}
+
+/*===== fim ESTRUTURA PRINCIPAL =====*/
+
+
+/*===== inicio LOGIN PAGE =====*/
+#logo_login {
+    width: 300px;
+    float: left;
+    position: relative;
+    top: 50%;
+    transform: translate(0%,-50%);
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+.area_login {
+    /*    background-color: green;*/
+    width: 350px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);   
+    font-family: 'Roboto', sans-serif !important;
+}
+
+.links {
+    text-decoration: none; 
+}
+
+#box_botoes {
+    /*        background-color: red !important;*/
+    width: 270px;
+    position: relative;
+    right: -90px;   
+    position: relative;
+    padding-left: 10px;
+}
+/*===== fim LOGIN PAGE =====*/
+
+
+.botoes_cad{
+/*    background-color: red !important;*/
+    width: 300px;
+    position: relative !important;
+    bottom: 10px !important; 
+    left: 470px !important;
+    padding: 10px 10px;
+    margin-left: 70px;   
+}
+
+#logo {
+    width: 200px;
+    float: left;
+    position: relative;
+    top: 50%;
+    transform: translate(0%,-50%);
+}
+#texto_intro {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18pt;
+}
+
+/*===== incio OVERRIDE PRIMEFACES =====*/
+.ui-inputtext {
+    border-radius: 2px !important;
+    border: 1px solid #7156ff;
+
+}
+.ui-password {
+    border-radius: 2px !important;
+    border: 1px solid #7156ff;
+}
+
+.ui-inputfield {
+    color: red !important;
+}
+
+.ui-outputlabel {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 16pt !important; 
+    color: white;
 }
 
 .ui-button-text {
-    color: purple;
-    font-size: 16px;
+    color: white;
+    font-size: 16pt;
 }
 
 .ui-button {
-    background: white !important;
+    background: #9d3384 !important;
     border-style: none !important;
     border-radius: 2px !important;
 }
 
-.btnteste{
-    position: relative !important;
-    bottom: 10px !important; 
-    left: 100px !important;
-    padding: 15px 0px;
-    margin-left: 140px;   
+.ui-menuitem-text{
+/*    color: red;*/
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14pt !important; 
 }
 
-.topo_page {
-/*    background-color: red;*/
-    padding-bottom: 10px;
-}
-#logo {
-   width: 200px;
-   float: left;
+.ui-menubar{
+    background: #D97A0D !important;
+    border-radius: 0px !important;
+    border-style: none none !important;
 }
 
-#texto_topo{
-    font-family: 'Roboto', sans-serif;
-    font-size: 16pt;
-    color: black;
-    text-align: right;
-    position: relative;
-    top: 15px;   
+.btn_logout{
+    background-color: white !important;
+    border-radius: 10px !important;
 }
+
+.btn_logout .ui-button-text{
+    color: #D97A0D !important;
+}
+/*===== fim OVERRIDE PRIMEFACES =====*/
+
 
 /*NÃO USADO*/
 .container {
@@ -184,4 +267,24 @@ body {
     text-shadow:
         0px -1px 0px rgba(000,000,000,0.2),
         0px 1px 0px rgba(255,255,255,1);
+}
+
+#texto_topo{
+    background-color: gray;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16pt;
+    color: black;
+    text-align: right;
+    position: relative;
+    margin-top: 0px;
+    top: 50%;
+    transform: translate(0%,-50%);
+}
+
+.center1{
+    position:absolute;
+    left:45%;
+    top:25%;
+    margin-left:-110px;
+    margin-top:-40px;
 }

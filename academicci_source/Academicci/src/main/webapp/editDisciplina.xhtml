@@ -7,73 +7,87 @@
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:p="http://primefaces.org/ui">
 
+    <ui:define name="titulo">Disciplina</ui:define>
+
     <ui:define name="corpo">
-        
-        <p:tabView >
-            <p:tab title="Editar Disciplina">
+        <h:form id="form-cadastro">	 	
+            <p:panel header="Cadastro de Disciplina">
+                <h:panelGrid id="panelGrid-campos-form" columns="2" border="0" cellspacing="5" cellpadding="5">
 
-                <h:form id="form-cadastro">	 	
+                    <p:outputLabel value="Disciplina" for="inputText-disciplina"/>
+                    <p:inputText id="inputText-disciplina" 
+                                 style="width:300px" maxlength="70" 
+                                 value=""
+                                 required="true"
+                                 requiredMessage="A DISCIPLINA é de preenchimento obrigatório"/>
 
-                    <h:panelGrid id="panelGrid-campos-form" columns="2" cellpadding="10">
+                    <p:outputLabel for="selectOneRadio-semestre" value="Semestre:" />
+                    <p:selectOneRadio id="selectOneRadio-semestre" 
+                                      value=""
+                                      required="true"
+                                      requiredMessage="O SEMESTRE é de preenchimento obrigatório">
 
-                        <p:outputLabel value="Disciplina" for="inputText-nome"/>
-                        <p:inputText id="inputText-nome" 
-                                     style="width:300px" maxlength="70" 
-                                     value=""
-                                     required="true"
-                                     requiredMessage="A DISCIPLINA é de preenchimento obrigatório"/>
+                        <f:selectItem itemLabel="1" itemValue="1" />
+                        <f:selectItem itemLabel="2" itemValue="2" />            				
+                    </p:selectOneRadio>
 
-                        <p:outputLabel for="selectOneRadio-sexo" value="Semestre:" />
-                        <p:selectOneRadio id="selectOneRadio-sexo" 
-                                          value=""
-                                          required="true"
-                                          requiredMessage="O SEMESTRE é de preenchimento obrigatório">
-
-                            <f:selectItem itemLabel="1" itemValue="1" />
-                            <f:selectItem itemLabel="2" itemValue="2" />            				
-                        </p:selectOneRadio>
-
-                        <p:outputLabel value="Ano" for="inputText-email"/>
-                        <p:inputText id="inputText-email" 
-                                     style="width:300px" 
-                                     maxlength="4" 
-                                     value=""
-                                     required="true"
-                                     requiredMessage="O ANO é de preenchimento obrigatório"/>           		
+                    <p:outputLabel value="Ano" for="inputText-email"/>
+                    <p:inputText id="inputText-email" 
+                                 style="width:300px" 
+                                 maxlength="4" 
+                                 value=""
+                                 required="true"
+                                 requiredMessage="O ANO é de preenchimento obrigatório"/>           		
 
 
-                        <p:outputLabel value="Fórum" for="inputText-endereco"/>
-                        <p:inputText id="inputText-endereco" 
-                                     style="width:300px" 
-                                     maxlength="100" 
-                                     value=""
-                                     required="true"
-                                     requiredMessage="O FÓRUM é de preenchimento obrigatório"/>
+                    <p:outputLabel value="Período" for="inputText-periodo"/>
+                    <p:selectOneMenu id="inputText-periodo" value="" >
+                        <f:selectItem itemLabel="Selecione" itemValue="" />
+                        <f:selectItem itemLabel="1º Período" itemValue="periodo_01" />
+                        <f:selectItem itemLabel="2º Período" itemValue="periodo_02" />
+                        <f:selectItem itemLabel="3º Período" itemValue="periodo_03" />
+                        <f:selectItem itemLabel="4º Período" itemValue="periodo_04" />
+                        <f:selectItem itemLabel="5º Período" itemValue="periodo_05" />
+                        <f:selectItem itemLabel="6º Período" itemValue="periodo_06" />
+                        <f:selectItem itemLabel="7º Período" itemValue="periodo_07" />
+                        <f:selectItem itemLabel="8º Período" itemValue="periodo_08" />
+                        <f:selectItem itemLabel="9º Período" itemValue="periodo_09" />
+                        <f:selectItem itemLabel="10º Período" itemValue="periodo_10" />
+                    </p:selectOneMenu>
+                    
+                    <p:outputLabel value="Status" for="inputText-statusDisc"/>
+                    <p:inputText id="inputText-statusDisc" 
+                                 style="width:300px" maxlength="70" 
+                                 value=""
+                                 required="true"
+                                 requiredMessage="O STATUS é de preenchimento obrigatório"/>
+                    
+                    <f:facet name="footer" >
+                        <div class="botoes_cad">
+                            <p:commandButton value="Alterar" 
+                                             type="button"
+                                             id="commandButton-salvar"
+                                             icon=""
+                                             actionListener="#{cadastrarPessoaController.SalvarNovaPessoa}"
+                                             update="panelGrid-campos-form"/>
+                            <p:outputLabel value=""/>
+                            <p:commandButton value="Cancelar"
+                                             type="reset"
+                                             id="commandButton-cancelar"
+                                             icon=""
+                                             actionListener="#{cadastrarPessoaController.SalvarNovaPessoa}"
+                                             update="panelGrid-campos-form"/>
 
-                        <p:spacer/>
-                        <p:commandButton value="Salvar" 
-                                         id="commandButton-salvar"
-                                         icon=""
-                                         actionListener="#{cadastrarPessoaController.SalvarNovaPessoa}"
-                                         update="panelGrid-campos-form"/>
-                        
-                        <p:spacer/>
-                        <p:commandButton value="Cancelar" 
-                                         id="commandButton-cancelar"
-                                         icon=""
-                                         actionListener="#{cadastrarPessoaController.SalvarNovaPessoa}"
-                                         update="panelGrid-campos-form"/>
-                    </h:panelGrid>
+                        </div>
+                    </f:facet>                       
 
-                    <p:messages showDetail="true" autoUpdate="true" closable="true" severity="warn"/>
-                    <p:messages autoUpdate="true" closable="true" severity="error"/>		
-                    <p:messages showDetail="true" autoUpdate="true" closable="true" severity="info"/>
+                </h:panelGrid>
+            </p:panel>
 
-                </h:form>
+            <p:messages showDetail="true" autoUpdate="true" closable="true" severity="warn"/>
+            <p:messages autoUpdate="true" closable="true" severity="error"/>		
+            <p:messages showDetail="true" autoUpdate="true" closable="true" severity="info"/>
 
-            </p:tab>		 		
-
-        </p:tabView>
+        </h:form>
     </ui:define>
-
 </ui:composition>

@@ -14,15 +14,15 @@
             <p:panel header="Cadastro de Disciplina">
                 <h:panelGrid id="panelGrid-campos-form" columns="2" border="0" cellspacing="5" cellpadding="5">
 
-                    <p:outputLabel value="Disciplina" for="inputText-nome"/>
-                    <p:inputText id="inputText-nome" 
+                    <p:outputLabel value="Disciplina" for="inputText-disciplina"/>
+                    <p:inputText id="inputText-disciplina" 
                                  style="width:300px" maxlength="70" 
                                  value=""
                                  required="true"
                                  requiredMessage="A DISCIPLINA é de preenchimento obrigatório"/>
 
-                    <p:outputLabel for="selectOneRadio-sexo" value="Semestre:" />
-                    <p:selectOneRadio id="selectOneRadio-sexo" 
+                    <p:outputLabel for="selectOneRadio-semestre" value="Semestre:" />
+                    <p:selectOneRadio id="selectOneRadio-semestre" 
                                       value=""
                                       required="true"
                                       requiredMessage="O SEMESTRE é de preenchimento obrigatório">
@@ -40,17 +40,31 @@
                                  requiredMessage="O ANO é de preenchimento obrigatório"/>           		
 
 
-                    <p:outputLabel value="Fórum" for="inputText-endereco"/>
-                    <p:inputText id="inputText-endereco" 
-                                 style="width:300px" 
-                                 maxlength="100" 
+                    <p:outputLabel value="Período" for="inputText-periodo"/>
+                    <p:selectOneMenu id="inputText-periodo" value="" >
+                        <f:selectItem itemLabel="Selecione" itemValue="" />
+                        <f:selectItem itemLabel="1º Período" itemValue="periodo_01" />
+                        <f:selectItem itemLabel="2º Período" itemValue="periodo_02" />
+                        <f:selectItem itemLabel="3º Período" itemValue="periodo_03" />
+                        <f:selectItem itemLabel="4º Período" itemValue="periodo_04" />
+                        <f:selectItem itemLabel="5º Período" itemValue="periodo_05" />
+                        <f:selectItem itemLabel="6º Período" itemValue="periodo_06" />
+                        <f:selectItem itemLabel="7º Período" itemValue="periodo_07" />
+                        <f:selectItem itemLabel="8º Período" itemValue="periodo_08" />
+                        <f:selectItem itemLabel="9º Período" itemValue="periodo_09" />
+                        <f:selectItem itemLabel="10º Período" itemValue="periodo_10" />
+                    </p:selectOneMenu>
+                    
+                    <p:outputLabel value="Status" for="inputText-statusDisc"/>
+                    <p:inputText id="inputText-statusDisc" 
+                                 style="width:300px" maxlength="70" 
                                  value=""
                                  required="true"
-                                 requiredMessage="O FÓRUM é de preenchimento obrigatório"/>
-
+                                 requiredMessage="O STATUS é de preenchimento obrigatório"/>
+                    
                     <f:facet name="footer" >
-                        <div class="btnteste">
-                            <p:commandButton value="Alterar" 
+                        <div class="botoes_cad">
+                            <p:commandButton value="Cadastrar" 
                                              type="button"
                                              id="commandButton-salvar"
                                              icon=""

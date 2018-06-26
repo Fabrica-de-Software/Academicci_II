@@ -20,7 +20,7 @@
             <p:growl id="messages"/>
 
             <p:menubar>
-                <p:menuitem icon="oi" value="Início" url="https://google.com.br"/> 
+                <p:menuitem value="Início" url="/aplicacao/index.xhtml"/> 
                                 
                 <p:submenu label="Usuário">
                     <p:menuitem value="Novo Usuário" url="/cadUsuario.xhtml"/>
@@ -39,9 +39,8 @@
                 <p:menuitem value="Ajuda" url="#" />
                 
                 <f:facet name="options">
-                    <p:outputLabel value="Bem-Vindo(a), " />
+<!--                    <p:outputLabel value="Bem-Vindo(a), " />-->
                     <p:commandButton value="Sair" action="#{LoginMB.logout()}" styleClass="btn_logout"/>
-                    
                 </f:facet>
             </p:menubar>
         </h:form>        

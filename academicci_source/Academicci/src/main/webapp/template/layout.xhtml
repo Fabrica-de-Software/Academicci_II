@@ -12,15 +12,13 @@
         </title>
         <h:outputStylesheet library="css" name="estilo.css" />
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
     </h:head>
 
     <h:body>
         <div class="topo_page">
             <ui:insert name="topo">
-                    <h:graphicImage value="/resources/images/002.png" id="logo"/>
-                    <h1 id="texto_topo">
-                        Gestão de Monitorias
-                    </h1>
+                    <h:graphicImage value="/resources/images/002_4.png" id="logo"/>
             </ui:insert>
         </div>
 
@@ -48,7 +46,9 @@
 
         <div class="rodape"> 
             <ui:insert name="rodape">
-                Desenvolvido na Disciplina de Prática em Fábrica de Software II
+                <div id="texto_rodape">
+                    Desenvolvido na Disciplina de Prática em Fábrica de Software II
+                </div>
             </ui:insert>
         </div>
 

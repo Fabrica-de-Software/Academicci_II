@@ -1,21 +1,30 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:p="http://primefaces.org/ui">
-    <h:head>
-        <title>Cadastro de Alunos</title>
-    </h:head>
-    <h:body>
+<!DOCTYPE html>
+<ui:composition template="/template/layout.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
 
-        Usuário #{LoginMB.login.login} autenticado com sucesso !
-        <br/>
-        <h:form>
-            
-            <h:commandButton value="Logout" action="#{LoginMB.logout()}" />
-            
+    <ui:define name="titulo">Início</ui:define>
+
+    <ui:define name="corpo">
+        <h:form id="form-cadastro">	 	
+            <p:panel header="Seja Bem-Vindo(a): #{LoginMB.login.login}">
+                <div id="texto_intro">
+                    A partir de agora, você será apresentado 
+                    <br />
+                    a uma nova experiência gerenciamento de monitorias!
+                    <br /><br />
+                    Vá até ao menu e divirta-se!
+                </div>
+            </p:panel>
+
+            <p:messages showDetail="true" autoUpdate="true" closable="true" severity="warn"/>
+            <p:messages autoUpdate="true" closable="true" severity="error"/>		
+            <p:messages showDetail="true" autoUpdate="true" closable="true" severity="info"/>
+
         </h:form>
-    </h:body>
-</html>
- 
+    </ui:define>
+</ui:composition>
